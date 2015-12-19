@@ -1,0 +1,87 @@
+<ul class="nav nav-pills">
+  <li ui-sref-active="active"><a href="#/iphone/4">iPhone 4</a></li>
+  <li ui-sref-active="active"><a href="#/iphone/5">iPhone 5</a></li>
+</ul>
+
+<h1>{{title}}</h1>
+<div>
+</div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Название</th>
+      <th>Цена</th>
+      <th>Описание</th>
+      <th>Действие</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td class="td__name">
+        <p><input class="form-control" placeholder="Название услуги*" ng-model="list.name" type="text"></p>
+        <input class="form-control" placeholder="Ссылка" ng-model="list.url" type="text">
+      </td>
+      <td class="td__price">
+        <p><input class="form-control" placeholder="Цена услуги*" ng-model="list.price" type="text"></p>
+      </td>
+      <td class="td__description">
+        <textarea title="Описание" class="form-control" ng-model="list.description" cols="30" rows="2">{{list.description}}</textarea>
+
+      </td>
+      <td class="td__action">
+        <button class="btn btn-success" ng-click="add(list)">Добавить <i class="glyphicon glyphicon-plus"></i></button>
+
+        <!--<button class="btn btn-primary" ng-click="update()">Update</button>-->
+      </td>
+    </tr>
+  </tbody>
+</table>
+<table class="table" sv-root sv-part="priceList" sv-on-sort="test($item, $partFrom, $partTo, $indexFrom, $indexTo)">
+
+  <tbody>
+
+  <tr ng-repeat="item in priceList" sv-element sv-on-sort="bar($item, $partFrom, $partTo, $indexFrom, $indexTo)">
+    <td class="td__name">
+      <p><input ng-show="item.shown" class="form-control" value="{{item.name}}" ng-model="item.name" type="text"
+                placeholder="Название услуги"></p>
+      <p><input ng-show="item.shown" class="form-control" value="{{item.url}}" ng-model="item.url" type="text"
+                placeholder="Ссылка">
+      </p>
+      <div ng-show="!item.shown">
+        <div ng-if="item.url">
+          <a href="{{item.url}}">
+            {{item.name}}
+          </a>
+        </div>
+        <div ng-if="!item.url">
+          {{item.name}}
+        </div>
+      </div>
+      <input type="hidden" ng-bind="item.idx = $index" value="{{$index}}">
+    </td>
+    <td class="td__price">
+      <input ng-show="item.shown" class="form-control" value="{{item.price}}" ng-model="item.price" type="text"
+             placeholder="Цена услуги">
+
+      <div ng-show="!item.shown">
+        {{item.price}}
+      </div>
+    </td>
+    <td class="td__description">
+      <textarea ng-show="item.shown" class="form-control" ng-model="item.description">{{item.description}}</textarea>
+      <div ng-hide="item.shown">{{item.description}}</div>
+
+    </td>
+    <td class="td__action">
+      <p>
+        <button ng-hide="item.shown" class="btn btn-warning glyphicon glyphicon-pencil" ng-click="edit(item); item.shown = !item.shown"></button>
+        <button ng-hide="item.shown" class="btn btn-danger glyphicon glyphicon-minus" ng-click="remove(item._id)"><i
+                class=""></i></button>
+        <button ng-hide="!item.shown" class="btn btn-success js-btn-update glyphicon glyphicon-ok"
+                ng-click="update(item); item.shown = !item.shown"></button>
+        <button ng-hide="!item.shown" class="btn btn-danger glyphicon glyphicon-remove" ng-click="editOnCancel(item); item.shown = !item.shown"></button>
+      </p>
+    </td>
+  </tr>
+  </tbody>
+</table>

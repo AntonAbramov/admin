@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="app">
+<head>
+  <meta charset="UTF-8">
+  <title>this is title</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+        integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+  <!-- Optional theme -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css"
+        integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<div class="container">
+  <header ng-include="'templates/nav.html'"></header>
+  <div>
+     <div ui-view></div>
+  </div>
+  <footer ng-include="'templates/footer.html'"></footer>
+</div>
+
+<!--<div class="container" ng-controller="AppCtrl">
+
+  <h1>hello world</h1>
+  <table class="table">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Message</th>
+        <th>date</th>
+        <th>Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td colspan="3">
+          <p><input type="text" class="form-control" ng-model="comment.name"></p>
+          <div>
+            <textarea name="msg" class="form-control"  cols="30" rows="10" ng-model="comment.msg"></textarea>
+          </div>
+        </td>
+        <td>
+          <p><button class="btn btn-primary" ng-click="addComment()">Add comment</button></p>
+          <p><button class="btn btn-info" ng-click="update()">Update</button></p>
+      </tr>
+      <tr ng-repeat="comment in commentlist">
+        <td>{{comment.name}}</td>
+        <td>{{comment.msg}}</td>
+        <td>{{comment.date}}</td>
+        <td>
+          <p>
+            <button class="btn btn-danger" ng-click="remove(comment._id)">Remove</button>
+            <button class="btn btn-warning" ng-click="edit(comment._id)">Edit</button>
+          </p>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>-->
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.0-beta.2/angular.min.js"></script>
+<script src="http://angular-ui.github.io/ui-router/release/angular-ui-router.js"></script>
+<script src="js/vnd/angular-sortable-view.min.js"></script>
+<script src="js/app.js"></script>
+<script src="js/controllers/homeCtrl.js"></script>
+<script src="js/controllers/aboutCtrl.js"></script>
+<script src="js/controllers/iphoneCtrl.js"></script>
+<script src="js/directives/iphone4.js"></script>
+<!--<script src="controllers/controller.js"></script>-->
+</body>
+</html>

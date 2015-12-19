@@ -1,0 +1,20 @@
+body {
+
+}
+
+[sv-element] {
+  cursor: move;
+}
+
+.td__name {
+  width: 20%;
+}
+.td__price {
+  width: 10%;
+}
+.td__description {
+  width: 50%
+}
+.td__action {
+  width: 20%;
+}
