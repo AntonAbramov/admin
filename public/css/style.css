@@ -2,7 +2,7 @@ body {
 
 }
 
-[sv-element] {
+[sv-handle] {
   cursor: move;
 }
 
@@ -18,3 +18,20 @@ body {
 .td__action {
   width: 20%;
 }
+
+table {
+  border: 1px solid #ddd;
+}
+
+.sv-helper {
+  background: rgba(0,0,0, .1);
+}
+
+.form-control {
+  font-size: 12px;
+}
+
+textarea.form-control {
+  line-height: 16px;
+}
+

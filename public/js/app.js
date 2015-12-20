@@ -22,11 +22,11 @@ var app = angular
             url: '/contact',
             templateUrl: 'templates/contact.html'
           })
-          .state('iphone2', {
-            url: '/iphone',
-            templateUrl: 'templates/iphone.html'
-          })
           .state('iphone', {
+            url: '/iphone',
+            templateUrl: 'templates/iphone-nav.html'
+          })
+          .state('iphone2', {
             url: '/iphone/:model',
             templateUrl: 'templates/iphone.html',
             controller: 'iphoneCtrl'

@@ -3,7 +3,18 @@ var bodyParser = require('body-parser');
 var path = require('path');
 var app = express();
 var mongojs = require('mongojs');
-var db = mongojs('serviceiphone', ['iphone4', 'iphone5']);
+var db = mongojs('serviceiphone', [
+  'iphone3',
+  'iphone4',
+  'iphone4s',
+  'iphone5',
+  'iphone5s',
+  'iphone5c',
+  'iphone6',
+  'iphone6plus',
+  'iphone6s',
+  'iphone6splus'
+]);
 //var db = mongojs('contaclist', ['contacts']);
 
 app.use(express.static(__dirname + '/public'));
