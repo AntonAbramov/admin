@@ -53,7 +53,7 @@ angular
       }
 
       $scope.remove = function (id) {
-        var areUSure = true;//confirm('Вы действительно хотите удалить?');
+        var areUSure = confirm('Эй! Ты же удаляешь! Ты хорошо подумал?');
         if (areUSure) {
           $http.delete('/iphone/' + $stateParams.model + '/' + id).success(function (response) {
             refresh();
