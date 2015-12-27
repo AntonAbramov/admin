@@ -26,9 +26,27 @@ var app = angular
             url: '/iphone',
             templateUrl: 'templates/iphone-nav.html'
           })
-          .state('iphone2', {
+          .state('iphoneModel', {
             url: '/iphone/:model',
             templateUrl: 'templates/iphone.html',
             controller: 'iphoneCtrl'
+          })
+          .state('ipad', {
+            url: '/ipad',
+            templateUrl: 'templates/ipad-nav.html'
+          })
+          .state('ipadModel', {
+            url: '/ipad/:model',
+            templateUrl: 'templates/ipad.html',
+            controller: 'ipadCtrl'
+          })
+          .state('macbook', {
+            url: '/macbook',
+            templateUrl: 'templates/macbook-nav.html'
+          })
+          .state('macbookModel', {
+            url: '/macbook/:model',
+            templateUrl: 'templates/macbook.html',
+            controller: 'macbookCtrl'
           })
     }]);
