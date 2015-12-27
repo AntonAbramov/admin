@@ -24,6 +24,7 @@ var db = mongojs('serviceiphone', [
   'ipadair2',
   'macbookmacbook',
   'macbookpro',
+  'macbookproretina',
   'macbookair'
 ]);
 //var db = mongojs('contaclist', ['contacts']);
