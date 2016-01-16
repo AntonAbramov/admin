@@ -19,7 +19,7 @@ plan.target('prodaction', [
   {
     host: '46.101.129.8',
     username: username,
-    privateKey: '/Users/anton/.ssh/id_rsa',
+    privateKey: '/Users/antonabramov/.ssh/id_rsa',
     agent: process.env.SSH_AUTH_SOCK
   }
 //add in another server if you have more than one
