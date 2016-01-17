@@ -214,7 +214,7 @@ app.put('/macbook/:model/:id', function (req, res) {
 
 // *************** END *****************
 
-app.listen(6000);
+app.listen(5000);
 console.log('Server runing: localhost:5000');
 
 
