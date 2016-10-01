@@ -49,4 +49,40 @@ var app = angular
             templateUrl: 'templates/macbook.html',
             controller: 'macbookCtrl'
           })
+          .state('macbook-pro', {
+            url: '/macbook-pro',
+            templateUrl: 'templates/macbook-pro-nav.html'
+          })
+          .state('macbookProModel', {
+            url: '/macbook-pro/:model',
+            templateUrl: 'templates/macbook-pro.html',
+            controller: 'macbookProCtrl'
+          })
+          .state('macbook-air', {
+            url: '/macbook-air',
+            templateUrl: 'templates/macbook-air-nav.html'
+          })
+          .state('macbookAirModel', {
+            url: '/macbook-air/:model',
+            templateUrl: 'templates/macbook-air.html',
+            controller: 'macbookAirCtrl'
+          })
+          .state('imac', {
+            url: '/imac',
+            templateUrl: 'templates/imac-nav.html'
+          })
+          .state('iMacModel', {
+            url: '/imac/:model',
+            templateUrl: 'templates/imac.html',
+            controller: 'imacCtrl'
+          })
+          .state('macbook-simple', {
+            url: '/macbook-simple',
+            templateUrl: 'templates/macbook-simple-nav.html'
+          })
+          .state('macbookSimpleModel', {
+            url: '/macbook-simple/:model',
+            templateUrl: 'templates/macbook-simple.html',
+            controller: 'macbookSimpleCtrl'
+          })
     }]);

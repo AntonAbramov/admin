@@ -155,7 +155,7 @@ app.put('/ipad/:model/:id', function (req, res) {
   });
 });
 
-// *************** macbook *****************
+// *************** macbook old *****************
 
 app.get('/macbook/:model', function (req, res) {
   console.log('I reveived a GET request');
@@ -196,6 +196,243 @@ app.get('/macbook/:model/:id', function (req, res) {
 app.put('/macbook/:model/:id', function (req, res) {
   var id = req.params.id;
   var dbName = 'macbook' + req.params.model;
+  db[dbName].findAndModify({query:{_id: mongojs.ObjectId(id)},
+    update: {$set: {
+      name: req.body.name,
+      price: req.body.price,
+      url: req.body.url,
+      description: req.body.description,
+      idx: req.body.idx
+    }
+    },
+    new: true
+
+  }, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+// *************** END *****************
+
+// *************** macbook Pro *****************
+
+app.get('/macbookpro/:model', function (req, res) {
+  console.log('I reveived a GET request');
+  var dbName = 'macbookpro' + req.params.model;
+  db[dbName].find().sort({'idx' : 1}, function (err, docs) {
+    if (err) throw err;
+    console.log(docs);
+    res.json(docs);
+  });
+});
+
+app.post('/macbookpro/:model', function (req, res) {
+  console.log(req.body);
+  var dbName = 'macbookpro' + req.params.model;
+  db[dbName].insert(req.body, function (err, doc) {
+    res.json(doc);
+    console.log(doc);
+  })
+
+});
+
+app.delete('/macbookpro/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookpro' + req.params.model;
+  db[dbName].remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+app.get('/macbookpro/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookpro' + req.params.model;
+  db[dbName].findOne({_id: mongojs.ObjectId(id)}, function (err, doc){
+    res.json(doc);
+  });
+});
+
+app.put('/macbookpro/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookpro' + req.params.model;
+  db[dbName].findAndModify({query:{_id: mongojs.ObjectId(id)},
+    update: {$set: {
+      name: req.body.name,
+      price: req.body.price,
+      url: req.body.url,
+      description: req.body.description,
+      idx: req.body.idx
+    }
+    },
+    new: true
+
+  }, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+// *************** END *****************
+
+
+// *************** macbook Air *****************
+
+app.get('/macbookair/:model', function (req, res) {
+  console.log('I reveived a GET request');
+  var dbName = 'macbookair' + req.params.model;
+  db[dbName].find().sort({'idx' : 1}, function (err, docs) {
+    if (err) throw err;
+    console.log(docs);
+    res.json(docs);
+  });
+});
+
+app.post('/macbookair/:model', function (req, res) {
+  console.log(req.body);
+  var dbName = 'macbookair' + req.params.model;
+  db[dbName].insert(req.body, function (err, doc) {
+    res.json(doc);
+    console.log(doc);
+  })
+
+});
+
+app.delete('/macbookair/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookair' + req.params.model;
+  db[dbName].remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+app.get('/macbookair/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookair' + req.params.model;
+  db[dbName].findOne({_id: mongojs.ObjectId(id)}, function (err, doc){
+    res.json(doc);
+  });
+});
+
+app.put('/macbookair/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookair' + req.params.model;
+  db[dbName].findAndModify({query:{_id: mongojs.ObjectId(id)},
+    update: {$set: {
+      name: req.body.name,
+      price: req.body.price,
+      url: req.body.url,
+      description: req.body.description,
+      idx: req.body.idx
+    }
+    },
+    new: true
+
+  }, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+// *************** END *****************
+
+// *************** iMac *****************
+
+app.get('/imac/:model', function (req, res) {
+  console.log('I reveived a GET request');
+  var dbName = 'imac' + req.params.model;
+  db[dbName].find().sort({'idx' : 1}, function (err, docs) {
+    if (err) throw err;
+    console.log(docs);
+    res.json(docs);
+  });
+});
+
+app.post('/imac/:model', function (req, res) {
+  console.log(req.body);
+  var dbName = 'imac' + req.params.model;
+  db[dbName].insert(req.body, function (err, doc) {
+    res.json(doc);
+    console.log(doc);
+  })
+
+});
+
+app.delete('/imac/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'imac' + req.params.model;
+  db[dbName].remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+app.get('/imac/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'imac' + req.params.model;
+  db[dbName].findOne({_id: mongojs.ObjectId(id)}, function (err, doc){
+    res.json(doc);
+  });
+});
+
+app.put('/imac/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'imac' + req.params.model;
+  db[dbName].findAndModify({query:{_id: mongojs.ObjectId(id)},
+    update: {$set: {
+      name: req.body.name,
+      price: req.body.price,
+      url: req.body.url,
+      description: req.body.description,
+      idx: req.body.idx
+    }
+    },
+    new: true
+
+  }, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+// *************** END *****************
+
+// *************** macbook simple *****************
+
+app.get('/macbooksimple/:model', function (req, res) {
+  console.log('I reveived a GET request');
+  var dbName = 'macbooksimple' + req.params.model;
+  db[dbName].find().sort({'idx' : 1}, function (err, docs) {
+    if (err) throw err;
+    console.log(docs);
+    res.json(docs);
+  });
+});
+
+app.post('/macbooksimple/:model', function (req, res) {
+  console.log(req.body);
+  var dbName = 'macbooksimple' + req.params.model;
+  db[dbName].insert(req.body, function (err, doc) {
+    res.json(doc);
+    console.log(doc);
+  })
+
+});
+
+app.delete('/macbooksimple/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbooksimple' + req.params.model;
+  db[dbName].remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+app.get('/macbooksimple/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbooksimple' + req.params.model;
+  db[dbName].findOne({_id: mongojs.ObjectId(id)}, function (err, doc){
+    res.json(doc);
+  });
+});
+
+app.put('/macbooksimple/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbooksimple' + req.params.model;
   db[dbName].findAndModify({query:{_id: mongojs.ObjectId(id)},
     update: {$set: {
       name: req.body.name,
