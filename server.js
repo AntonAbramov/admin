@@ -25,24 +25,18 @@ var db = mongojs('serviceiphone', [
   'ipadmini3',
   'ipadair',
   'ipadair2',
+  'mini4',
+  'ipadpro129',
+  'ipadpro97',
   'macbookmacbook',
   'macbookpro',
   'macbookproretina',
   'macbookair',
-  'macbookproa1150',
-  'macbookproa1151',
-  'macbookproa1211',
-  'macbookproa1212',
-  'macbookproa1226',
-  'macbookproa1229',
-  'macbookproa1260',
-  'macbookproa1260',
   'macbookproa1278',
   'macbookproa1286',
-  'macbookproa1297',
-  'macbookproa1398',
-  'macbookproa1425',
-  'macbookproa1502',
+  'macbookproretinaa1398',
+  'macbookproretinaa1425',
+  'macbookproretinaa1502',
   'macbookaira1304',
   'macbookaira1369',
   'macbookaira1370',
@@ -283,6 +277,65 @@ app.get('/macbookpro/:model/:id', function (req, res) {
 app.put('/macbookpro/:model/:id', function (req, res) {
   var id = req.params.id;
   var dbName = 'macbookpro' + req.params.model;
+  db[dbName].findAndModify({query:{_id: mongojs.ObjectId(id)},
+    update: {$set: {
+      name: req.body.name,
+      price: req.body.price,
+      url: req.body.url,
+      description: req.body.description,
+      idx: req.body.idx
+    }
+    },
+    new: true
+
+  }, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+// *************** END *****************
+
+// *************** macbook Pro RETINA *****************
+
+app.get('/macbookproretina/:model', function (req, res) {
+  console.log('I reveived a GET request');
+  var dbName = 'macbookproretina' + req.params.model;
+  db[dbName].find().sort({'idx' : 1}, function (err, docs) {
+    if (err) throw err;
+    console.log(docs);
+    res.json(docs);
+  });
+});
+
+app.post('/macbookproretina/:model', function (req, res) {
+  console.log(req.body);
+  var dbName = 'macbookproretina' + req.params.model;
+  db[dbName].insert(req.body, function (err, doc) {
+    res.json(doc);
+    console.log(doc);
+  })
+
+});
+
+app.delete('/macbookproretina/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookproretina' + req.params.model;
+  db[dbName].remove({_id: mongojs.ObjectId(id)}, function (err, doc) {
+    res.json(doc);
+  });
+});
+
+app.get('/macbookproretina/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookproretina' + req.params.model;
+  db[dbName].findOne({_id: mongojs.ObjectId(id)}, function (err, doc){
+    res.json(doc);
+  });
+});
+
+app.put('/macbookproretina/:model/:id', function (req, res) {
+  var id = req.params.id;
+  var dbName = 'macbookproretina' + req.params.model;
   db[dbName].findAndModify({query:{_id: mongojs.ObjectId(id)},
     update: {$set: {
       name: req.body.name,

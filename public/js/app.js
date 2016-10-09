@@ -58,6 +58,15 @@ var app = angular
             templateUrl: 'templates/macbook-pro.html',
             controller: 'macbookProCtrl'
           })
+          .state('macbook-pro-retina', {
+            url: '/macbook-pro-retina',
+            templateUrl: 'templates/macbook-pro-retina-nav.html'
+          })
+          .state('macbookProRetinaModel', {
+            url: '/macbook-pro-retina/:model',
+            templateUrl: 'templates/macbook-pro-retina.html',
+            controller: 'macbookProRetinaCtrl'
+          })
           .state('macbook-air', {
             url: '/macbook-air',
             templateUrl: 'templates/macbook-air-nav.html'
