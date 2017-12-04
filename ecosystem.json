@@ -24,6 +24,7 @@
     "production": {
       "user": "root",
       "host": "46.101.129.8",
+      "port": "2233",
       "ref": "origin/master",
       "repo": "git@github.com:AntonAbramov/admin.git",
       "path": "/root/admin/",
