@@ -31,6 +31,8 @@ var db = mongojs('serviceiphone', [
   'mini4',
   'ipadpro129',
   'ipadpro97',
+  'ipadnew2017', // +
+  'ipadpro105', //+
   'macbookmacbook',
   'macbookpro',
   'macbookproretina',
@@ -40,6 +42,10 @@ var db = mongojs('serviceiphone', [
   'macbookproretinaa1398',
   'macbookproretinaa1425',
   'macbookproretinaa1502',
+  'macbookproretinaa1706', //+
+  'macbookproretinaa1707', //+
+  'macbookproretinaa1708', //+
+  'macbookproretinaa1534', //+
   'macbookaira1304',
   'macbookaira1369',
   'macbookaira1370',
@@ -50,7 +56,18 @@ var db = mongojs('serviceiphone', [
   'imaca1311',
   'imaca1312',
   'imaca1418',
-  'imaca1419'
+  'imaca1419',
+  'imaca1418',//+
+  'imac4ka1418',//+
+  'imac5ka1419',//+
+  'imaca1312',//+
+  'imaca1311',//+
+  'watch38',//+
+  'watch42',//+
+  'watch238',//+
+  'watch242',//+
+  'watch338',//+
+  'watch342',//+
 ]);
 //var db = mongojs('contaclist', ['contacts']);
 
