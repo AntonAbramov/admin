@@ -45,7 +45,7 @@ var db = mongojs('serviceiphone', [
   'macbookproretinaa1706', //+
   'macbookproretinaa1707', //+
   'macbookproretinaa1708', //+
-  'macbookproretinaa1534', //+
+  'macbooka1534', //+
   'macbookaira1304',
   'macbookaira1369',
   'macbookaira1370',
