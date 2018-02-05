@@ -94,9 +94,9 @@ var app = angular
             templateUrl: 'templates/macbook-simple.html',
             controller: 'macbookSimpleCtrl'
           })
-        .state('watch', {
-          url: '/watch/:model',
-          templateUrl: 'templates/watch.html',
-          controller: 'watchCtrl'
+        .state('iwatch', {
+          url: '/iwatch/:model',
+          templateUrl: 'templates/iwatch.html',
+          controller: 'iwatchCtrl'
         })
     }]);

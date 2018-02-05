@@ -1,11 +1,11 @@
 angular
     .module('app')
-    .controller('watchCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
-      $scope.title = "watch " + $stateParams.model;
+    .controller('iwatchCtrl', ['$scope', '$http', '$stateParams', function($scope, $http, $stateParams) {
+      $scope.title = "iwatch " + $stateParams.model;
 
       var refresh = function () {
 
-        $http.get('/watch/' + $stateParams.model).success(function (response) {
+        $http.get('/iwatch/' + $stateParams.model).success(function (response) {
           console.log('I got a data I requested');
           $scope.priceList = response;
           $scope.list = '';
@@ -16,14 +16,14 @@ angular
 
       $scope.add = function () {
         $scope.list.idx = $scope.priceList.length;
-        $http.post('/watch/' + $stateParams.model, $scope.list).success(function (response) {
+        $http.post('/iwatch/' + $stateParams.model, $scope.list).success(function (response) {
           console.log(response);
           refresh();
         });
       };
 
       /*$scope.update = function (id) {
-        $http.put('/watch/' + $stateParams.model + '/' + $scope.list._id, $scope.list).success(function (response) {
+        $http.put('/iwatch/' + $stateParams.model + '/' + $scope.list._id, $scope.list).success(function (response) {
           refresh();
         });
       };*/
@@ -38,7 +38,7 @@ angular
 
       $scope.update = function (obj) {
         console.log(obj);
-        $http.put('/watch/' + $stateParams.model + '/' + obj._id, obj).success(function (response) {
+        $http.put('/iwatch/' + $stateParams.model + '/' + obj._id, obj).success(function (response) {
           //refresh();
         });
       };
@@ -55,7 +55,7 @@ angular
       $scope.remove = function (id) {
         var areUSure = confirm('Эй! Ты же удаляешь! Ты хорошо подумал?');
         if (areUSure) {
-          $http.delete('/watch/' + $stateParams.model + '/' + id).success(function (response) {
+          $http.delete('/iwatch/' + $stateParams.model + '/' + id).success(function (response) {
             refresh();
           });
         }
@@ -69,7 +69,7 @@ angular
       $scope.test = function ($item, $partFrom, $partTo, $indexFrom, $indexTo) {
         setTimeout(function () {
           $scope.priceList.forEach(function (obj) {
-            $http.put('/watch/' + $stateParams.model + '/' + obj._id, obj).success(function (response) {
+            $http.put('/iwatch/' + $stateParams.model + '/' + obj._id, obj).success(function (response) {
               console.log(response);
             });
           });
